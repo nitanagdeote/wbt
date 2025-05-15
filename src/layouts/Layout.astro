@@ -1,13 +1,20 @@
+
+---
+// src/layouts/Layout.astro
+import Navbar from '../components/Navbar.jsx';
+---
 <!doctype html>
-<html lang="en">
+<html lang="en"  class="bg-white text-black"
+>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>What the Buddha Taught</title>
 	</head>
 	<body>
+	<Navbar client:load />
 		<slot />
 	</body>
 </html>
@@ -19,4 +26,12 @@
 		width: 100%;
 		height: 100%;
 	}
+	/* Tailwind or regular CSS */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50; /* Make sure it stays above other content */
+  background-color: white; /* Optional: set background */
+}
+
 </style>
